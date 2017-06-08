@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-257" y="195"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Bridddle-->
         <scene sceneID="VQv-fH-UFY">
             <objects>
                 <collectionViewController id="wGK-KT-OTp" customClass="HomeViewController" customModule="Bridddle" customModuleProvider="target" sceneMemberID="viewController">
@@ -71,17 +71,17 @@
                             <outlet property="delegate" destination="wGK-KT-OTp" id="bHx-Be-8iV"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="Zll-In-4QP"/>
+                    <navigationItem key="navigationItem" title="Bridddle" id="Zll-In-4QP"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MOP-kt-h8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1588" y="194.75262368815595"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="CdM-G2-lV5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vLF-Na-YD1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ZmP-Gu-4MP"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home" selectedImage="Home" id="ZmP-Gu-4MP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kwu-Se-b1e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -97,4 +97,7 @@
             <point key="canvasLocation" x="648.79999999999995" y="194.75262368815595"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Home" width="30" height="30"/>
+    </resources>
 </document>
