@@ -13,6 +13,11 @@
 		9B9B4BB61EE8D75D006B18BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B9B4BB51EE8D75D006B18BD /* Assets.xcassets */; };
 		9B9B4BB91EE8D75D006B18BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B9B4BB71EE8D75D006B18BD /* LaunchScreen.storyboard */; };
 		9B9B4BC41EE8D75D006B18BD /* BridddleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B4BC31EE8D75D006B18BD /* BridddleTests.swift */; };
+		9B9B4BD11EE8E310006B18BD /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B9B4BD01EE8E310006B18BD /* Keys.plist */; };
+		9B9B4BD31EE8E634006B18BD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B4BD21EE8E634006B18BD /* HomeViewController.swift */; };
+		9B9B4BD51EE8E983006B18BD /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B4BD41EE8E983006B18BD /* ImageViewCell.swift */; };
+		9B9B4BD71EE8EB47006B18BD /* Shot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B4BD61EE8EB47006B18BD /* Shot.swift */; };
+		9B9B4BD91EE8EBBE006B18BD /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B4BD81EE8EBBE006B18BD /* ImageUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,11 @@
 		9B9B4BBF1EE8D75D006B18BD /* BridddleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BridddleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B9B4BC31EE8D75D006B18BD /* BridddleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridddleTests.swift; sourceTree = "<group>"; };
 		9B9B4BC51EE8D75D006B18BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B9B4BD01EE8E310006B18BD /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		9B9B4BD21EE8E634006B18BD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9B9B4BD41EE8E983006B18BD /* ImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
+		9B9B4BD61EE8EB47006B18BD /* Shot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shot.swift; sourceTree = "<group>"; };
+		9B9B4BD81EE8EBBE006B18BD /* ImageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +89,15 @@
 			children = (
 				9B9B4BAE1EE8D75D006B18BD /* AppDelegate.swift */,
 				9B9B4BB01EE8D75D006B18BD /* ViewController.swift */,
+				9B9B4BD21EE8E634006B18BD /* HomeViewController.swift */,
+				9B9B4BD41EE8E983006B18BD /* ImageViewCell.swift */,
+				9B9B4BD61EE8EB47006B18BD /* Shot.swift */,
+				9B9B4BD81EE8EBBE006B18BD /* ImageUtil.swift */,
 				9B9B4BB21EE8D75D006B18BD /* Main.storyboard */,
 				9B9B4BB51EE8D75D006B18BD /* Assets.xcassets */,
 				9B9B4BB71EE8D75D006B18BD /* LaunchScreen.storyboard */,
 				9B9B4BBA1EE8D75D006B18BD /* Info.plist */,
+				9B9B4BD01EE8E310006B18BD /* Keys.plist */,
 			);
 			path = Bridddle;
 			sourceTree = "<group>";
@@ -179,6 +194,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B9B4BD11EE8E310006B18BD /* Keys.plist in Resources */,
 				9B9B4BB91EE8D75D006B18BD /* LaunchScreen.storyboard in Resources */,
 				9B9B4BB61EE8D75D006B18BD /* Assets.xcassets in Resources */,
 				9B9B4BB41EE8D75D006B18BD /* Main.storyboard in Resources */,
@@ -199,8 +215,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B9B4BD51EE8E983006B18BD /* ImageViewCell.swift in Sources */,
 				9B9B4BB11EE8D75D006B18BD /* ViewController.swift in Sources */,
 				9B9B4BAF1EE8D75D006B18BD /* AppDelegate.swift in Sources */,
+				9B9B4BD91EE8EBBE006B18BD /* ImageUtil.swift in Sources */,
+				9B9B4BD71EE8EB47006B18BD /* Shot.swift in Sources */,
+				9B9B4BD31EE8E634006B18BD /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
