@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-
+import Alamofire
+import AlamofireObjectMapper
 
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     //MARK: Properties
@@ -18,15 +18,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         loadSampleData()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Do any additional setup after loading the view.
     }
-
     /*
     // MARK: - Navigation
 
@@ -69,7 +62,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         
         // Configure the cell
         let shot = shots[indexPath.row]
-        cell.imageView.downloadedFrom(link: shot.url)
+        cell.imageView.downloadedFrom(link: shot.url!)
         return cell
     }
 
@@ -102,15 +95,31 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
     }
-    */
-
+     */
+    
     //MARK: Private Methods
     func loadSampleData() {
-        let shot1: Shot = Shot(url: "https://cdn.dribbble.com/users/31752/screenshots/3551078/asana_summer_of_love.jpg")
-        let shot2: Shot = Shot(url: "https://cdn.dribbble.com/users/31752/screenshots/3551035/cover_new_hire_book_comp.jpg")
-        let shot3 = Shot(url: "https://cdn.dribbble.com/users/35381/screenshots/3550771/bike.png")
-        
-        shots += [shot1, shot2, shot3]
-        
+        var keys: NSDictionary?
+        if let path = Bundle.main.path(forResource: "Keys", ofType: "plist") {
+            keys = NSDictionary(contentsOfFile: path)
+        }
+        if let dict = keys {
+            let accessToken = dict["clientAccessToken"] as? String
+            
+            
+            let URL = "https://api.dribbble.com/v1/shots?access_token=\(accessToken!)"
+            
+            Alamofire.request(URL).responseArray { (response: DataResponse<[Shot]>) in
+                
+                let shotArray = response.result.value
+                self.shots.removeAll()
+                if let shotArray = shotArray {
+                    for shot in shotArray {
+                        self.shots.append(shot)
+                    }
+                }
+                self.collectionView?.reloadData()
+            }
+        }
     }
 }

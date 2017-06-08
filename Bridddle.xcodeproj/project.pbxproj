@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A9C0827B4A067DF023AE3C9 /* Pods_Bridddle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47DC5E166081CB6533339E36 /* Pods_Bridddle.framework */; };
 		9B9B4BAF1EE8D75D006B18BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B4BAE1EE8D75D006B18BD /* AppDelegate.swift */; };
 		9B9B4BB11EE8D75D006B18BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B4BB01EE8D75D006B18BD /* ViewController.swift */; };
 		9B9B4BB41EE8D75D006B18BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B9B4BB21EE8D75D006B18BD /* Main.storyboard */; };
@@ -31,6 +32,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00FB17236D58DE02ED9BC343 /* Pods-Bridddle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bridddle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bridddle/Pods-Bridddle.debug.xcconfig"; sourceTree = "<group>"; };
+		11F8315976A1EED2723BB374 /* Pods-Bridddle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bridddle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bridddle/Pods-Bridddle.release.xcconfig"; sourceTree = "<group>"; };
+		47DC5E166081CB6533339E36 /* Pods_Bridddle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bridddle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B9B4BAB1EE8D75D006B18BD /* Bridddle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bridddle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B9B4BAE1EE8D75D006B18BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B9B4BB01EE8D75D006B18BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A9C0827B4A067DF023AE3C9 /* Pods_Bridddle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,12 +71,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42A27D8A848BAF19117EEB1A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				47DC5E166081CB6533339E36 /* Pods_Bridddle.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9B9B4BA21EE8D75D006B18BD = {
 			isa = PBXGroup;
 			children = (
 				9B9B4BAD1EE8D75D006B18BD /* Bridddle */,
 				9B9B4BC21EE8D75D006B18BD /* BridddleTests */,
 				9B9B4BAC1EE8D75D006B18BD /* Products */,
+				B488B1852EFC4D6FE41AD453 /* Pods */,
+				42A27D8A848BAF19117EEB1A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +126,15 @@
 			path = BridddleTests;
 			sourceTree = "<group>";
 		};
+		B488B1852EFC4D6FE41AD453 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				00FB17236D58DE02ED9BC343 /* Pods-Bridddle.debug.xcconfig */,
+				11F8315976A1EED2723BB374 /* Pods-Bridddle.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,9 +142,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B9B4BC81EE8D75D006B18BD /* Build configuration list for PBXNativeTarget "Bridddle" */;
 			buildPhases = (
+				CB916435C96D48F75A0B6E1B /* [CP] Check Pods Manifest.lock */,
 				9B9B4BA71EE8D75D006B18BD /* Sources */,
 				9B9B4BA81EE8D75D006B18BD /* Frameworks */,
 				9B9B4BA91EE8D75D006B18BD /* Resources */,
+				04C4E2828D17086CB6709235 /* [CP] Embed Pods Frameworks */,
+				3B9FFEEF5C59E353DE254A2A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -209,6 +236,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04C4E2828D17086CB6709235 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bridddle/Pods-Bridddle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B9FFEEF5C59E353DE254A2A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bridddle/Pods-Bridddle-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB916435C96D48F75A0B6E1B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9B9B4BA71EE8D75D006B18BD /* Sources */ = {
@@ -359,6 +434,7 @@
 		};
 		9B9B4BC91EE8D75D006B18BD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00FB17236D58DE02ED9BC343 /* Pods-Bridddle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Bridddle/Info.plist;
@@ -371,6 +447,7 @@
 		};
 		9B9B4BCA1EE8D75D006B18BD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11F8315976A1EED2723BB374 /* Pods-Bridddle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Bridddle/Info.plist;

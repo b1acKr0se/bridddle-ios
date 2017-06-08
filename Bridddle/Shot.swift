@@ -7,11 +7,19 @@
 //
 
 import Foundation
+import ObjectMapper
 
-class Shot {
-    var url: String
+class Shot: Mappable {
+    var url: String?
     
-    init(url: String) {
+    required init?(map: Map) {
+    }
+
+    func mapping(map: Map) {
+        url <- map["images.normal"]
+    }
+    
+    init(url: String?) {
         self.url = url
     }
 }
