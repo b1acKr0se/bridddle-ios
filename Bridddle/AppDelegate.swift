@@ -40,12 +40,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
     func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
-        let userInfo = ["url": url]
-        NotificationCenter.default.post(name: .LOGIN_SUCCESSFUL_KEY, object: nil, userInfo: userInfo)
-
-        return true
+        guard let scheme = url.scheme else {
+            return false
+        }
+        if scheme == "plaid" {
+            let userInfo = ["url": url]
+            NotificationCenter.default.post(name: .LOGIN_SUCCESSFUL_KEY, object: nil, userInfo: userInfo)
+            return true
+        }
+        return false
     }
 }
 
