@@ -71,7 +71,16 @@
                             <outlet property="delegate" destination="wGK-KT-OTp" id="bHx-Be-8iV"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Bridddle" id="Zll-In-4QP"/>
+                    <navigationItem key="navigationItem" title="Bridddle" id="Zll-In-4QP">
+                        <barButtonItem key="rightBarButtonItem" image="login" id="cos-46-tc8">
+                            <connections>
+                                <action selector="login:" destination="wGK-KT-OTp" id="ahA-Y0-ift"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="loginButton" destination="cos-46-tc8" id="Sj6-o4-uLh"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MOP-kt-h8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -99,5 +108,6 @@
     </scenes>
     <resources>
         <image name="Home" width="30" height="30"/>
+        <image name="login" width="25" height="25"/>
     </resources>
 </document>
