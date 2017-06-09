@@ -132,7 +132,11 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     func notificationReceived(_ notification: Notification) {
         loginButton.image = UIImage(named: "logout")
-        
+        guard let url = notification.userInfo?["url"] as? URL else {
+            return
+        }
+        dribbbleLogin.processOAuthResponse(url)
+        print(url)
     }
     
     @IBAction func login(_ sender: UIBarButtonItem) {

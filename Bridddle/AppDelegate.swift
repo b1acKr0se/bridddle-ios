@@ -42,9 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
-        NotificationCenter.default.post(name: .LOGIN_SUCCESSFUL_KEY, object: nil)
-        
-        
+        let userInfo = ["url": url]
+        NotificationCenter.default.post(name: .LOGIN_SUCCESSFUL_KEY, object: nil, userInfo: userInfo)
+
         return true
     }
 }
