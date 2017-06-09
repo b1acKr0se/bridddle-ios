@@ -14,11 +14,14 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     //MARK: Properties
     fileprivate let reuseIdentifier = "ImageCell"
     var shots = [Shot]()
+    var dataManager = DataManager()
+    var currentPage = 1
+    var loading = true
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadSampleData()
+        loadPopularShot(currentPage)
     }
     /*
     // MARK: - Navigation
@@ -65,6 +68,14 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         cell.imageView.downloadedFrom(link: shot.url!)
         return cell
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let lastIndex = shots.count - 1
+        if !loading && indexPath.row == lastIndex {
+            currentPage += 1
+            loadPopularShot(currentPage)
+        }
+    }
 
     // MARK: UICollectionViewDelegate
 
@@ -98,28 +109,18 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
      */
     
     //MARK: Private Methods
-    func loadSampleData() {
-        var keys: NSDictionary?
-        if let path = Bundle.main.path(forResource: "Keys", ofType: "plist") {
-            keys = NSDictionary(contentsOfFile: path)
-        }
-        if let dict = keys {
-            let accessToken = dict["clientAccessToken"] as? String
-            
-            
-            let URL = "https://api.dribbble.com/v1/shots?access_token=\(accessToken!)"
-            
-            Alamofire.request(URL).responseArray { (response: DataResponse<[Shot]>) in
-                
-                let shotArray = response.result.value
-                self.shots.removeAll()
-                if let shotArray = shotArray {
-                    for shot in shotArray {
-                        self.shots.append(shot)
-                    }
+    func loadPopularShot(_ page: Int) {
+        loading = true
+        dataManager.getPopular(page: page)?.responseArray { (response: DataResponse<[Shot]>) in
+            let shotArray = response.result.value
+            if let shotArray = shotArray {
+                for shot in shotArray {
+                    self.shots.append(shot)
+                    let indexPath = IndexPath(item: self.shots.count-1, section: 0)
+                    self.collectionView?.insertItems(at: [indexPath])
                 }
-                self.collectionView?.reloadData()
             }
+            self.loading = false
         }
     }
 }

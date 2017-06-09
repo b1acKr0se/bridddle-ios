@@ -19,6 +19,8 @@
 		9B9B4BD51EE8E983006B18BD /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B4BD41EE8E983006B18BD /* ImageViewCell.swift */; };
 		9B9B4BD71EE8EB47006B18BD /* Shot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B4BD61EE8EB47006B18BD /* Shot.swift */; };
 		9B9B4BD91EE8EBBE006B18BD /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B4BD81EE8EBBE006B18BD /* ImageUtil.swift */; };
+		9BED39841EE951660017B833 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BED39831EE951660017B833 /* User.swift */; };
+		9BED39861EE957610017B833 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BED39851EE957610017B833 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		9B9B4BD41EE8E983006B18BD /* ImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
 		9B9B4BD61EE8EB47006B18BD /* Shot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shot.swift; sourceTree = "<group>"; };
 		9B9B4BD81EE8EBBE006B18BD /* ImageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
+		9BED39831EE951660017B833 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9BED39851EE957610017B833 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +110,9 @@
 				9B9B4BB01EE8D75D006B18BD /* ViewController.swift */,
 				9B9B4BD21EE8E634006B18BD /* HomeViewController.swift */,
 				9B9B4BD41EE8E983006B18BD /* ImageViewCell.swift */,
+				9BED39851EE957610017B833 /* DataManager.swift */,
 				9B9B4BD61EE8EB47006B18BD /* Shot.swift */,
+				9BED39831EE951660017B833 /* User.swift */,
 				9B9B4BD81EE8EBBE006B18BD /* ImageUtil.swift */,
 				9B9B4BB21EE8D75D006B18BD /* Main.storyboard */,
 				9B9B4BB51EE8D75D006B18BD /* Assets.xcassets */,
@@ -291,11 +297,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B9B4BD51EE8E983006B18BD /* ImageViewCell.swift in Sources */,
+				9BED39861EE957610017B833 /* DataManager.swift in Sources */,
 				9B9B4BB11EE8D75D006B18BD /* ViewController.swift in Sources */,
 				9B9B4BAF1EE8D75D006B18BD /* AppDelegate.swift in Sources */,
 				9B9B4BD91EE8EBBE006B18BD /* ImageUtil.swift in Sources */,
 				9B9B4BD71EE8EB47006B18BD /* Shot.swift in Sources */,
 				9B9B4BD31EE8E634006B18BD /* HomeViewController.swift in Sources */,
+				9BED39841EE951660017B833 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +513,7 @@
 				9B9B4BCA1EE8D75D006B18BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9B9B4BCB1EE8D75D006B18BD /* Build configuration list for PBXNativeTarget "BridddleTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +522,7 @@
 				9B9B4BCD1EE8D75D006B18BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
