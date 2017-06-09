@@ -41,6 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
+        NotificationCenter.default.post(name: .LOGIN_SUCCESSFUL_KEY, object: nil)
+        
+        
+        return true
+    }
 }
 

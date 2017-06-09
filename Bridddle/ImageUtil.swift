@@ -28,3 +28,7 @@ extension UIImageView {
         downloadedFrom(url: url, contentMode: mode)
     }
 }
+
+extension Notification.Name {
+    public static let LOGIN_SUCCESSFUL_KEY = Notification.Name(rawValue: "LoginSuccess")
+}

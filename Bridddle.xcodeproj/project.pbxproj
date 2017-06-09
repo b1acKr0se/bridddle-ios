@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A9C0827B4A067DF023AE3C9 /* Pods_Bridddle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47DC5E166081CB6533339E36 /* Pods_Bridddle.framework */; };
+		9B8233B21EEA47DF00873358 /* DribbbleLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8233B11EEA47DF00873358 /* DribbbleLogin.swift */; };
 		9B9B4BAF1EE8D75D006B18BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B4BAE1EE8D75D006B18BD /* AppDelegate.swift */; };
 		9B9B4BB11EE8D75D006B18BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B4BB01EE8D75D006B18BD /* ViewController.swift */; };
 		9B9B4BB41EE8D75D006B18BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B9B4BB21EE8D75D006B18BD /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 		00FB17236D58DE02ED9BC343 /* Pods-Bridddle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bridddle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bridddle/Pods-Bridddle.debug.xcconfig"; sourceTree = "<group>"; };
 		11F8315976A1EED2723BB374 /* Pods-Bridddle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bridddle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bridddle/Pods-Bridddle.release.xcconfig"; sourceTree = "<group>"; };
 		47DC5E166081CB6533339E36 /* Pods_Bridddle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bridddle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B8233B11EEA47DF00873358 /* DribbbleLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DribbbleLogin.swift; sourceTree = "<group>"; };
 		9B9B4BAB1EE8D75D006B18BD /* Bridddle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bridddle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B9B4BAE1EE8D75D006B18BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B9B4BB01EE8D75D006B18BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				9B9B4BD21EE8E634006B18BD /* HomeViewController.swift */,
 				9B9B4BD41EE8E983006B18BD /* ImageViewCell.swift */,
 				9BED39851EE957610017B833 /* DataManager.swift */,
+				9B8233B11EEA47DF00873358 /* DribbbleLogin.swift */,
 				9B9B4BD61EE8EB47006B18BD /* Shot.swift */,
 				9BED39831EE951660017B833 /* User.swift */,
 				9B9B4BD81EE8EBBE006B18BD /* ImageUtil.swift */,
@@ -298,6 +301,7 @@
 			files = (
 				9B9B4BD51EE8E983006B18BD /* ImageViewCell.swift in Sources */,
 				9BED39861EE957610017B833 /* DataManager.swift in Sources */,
+				9B8233B21EEA47DF00873358 /* DribbbleLogin.swift in Sources */,
 				9B9B4BB11EE8D75D006B18BD /* ViewController.swift in Sources */,
 				9B9B4BAF1EE8D75D006B18BD /* AppDelegate.swift in Sources */,
 				9B9B4BD91EE8EBBE006B18BD /* ImageUtil.swift in Sources */,

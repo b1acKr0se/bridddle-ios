@@ -11,16 +11,22 @@ import Alamofire
 import AlamofireObjectMapper
 
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
     //MARK: Properties
+    
+    @IBOutlet weak var loginButton: UIBarButtonItem!
+    
     fileprivate let reuseIdentifier = "ImageCell"
     var shots = [Shot]()
     var dataManager = DataManager()
+    var dribbbleLogin = DribbbleLogin()
     var currentPage = 1
     var loading = true
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.notificationReceived(_:)), name: .LOGIN_SUCCESSFUL_KEY, object: nil)
         loadPopularShot(currentPage)
     }
     /*
@@ -122,5 +128,14 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             }
             self.loading = false
         }
+    }
+    
+    func notificationReceived(_ notification: Notification) {
+        loginButton.image = UIImage(named: "logout")
+        
+    }
+    
+    @IBAction func login(_ sender: UIBarButtonItem) {
+        dribbbleLogin.login()
     }
 }
