@@ -10,12 +10,13 @@ import UIKit
 import Alamofire
 import Foundation
 
-class DribbbleLogin {
+class DribbbleCredentials {
     var clientId: String?
     var clientSecret: String?
+    var defaultAccessToken: String?
+    var userDefauls: UserDefaults
     
-    
-    init() {
+    init(_ userDef: UserDefaults) {
         var keys: NSDictionary?
         if let path = Bundle.main.path(forResource: "Keys", ofType: "plist") {
             keys = NSDictionary(contentsOfFile: path)
@@ -23,9 +24,12 @@ class DribbbleLogin {
         if let dict = keys {
             clientId = dict["clientId"] as? String
             clientSecret = dict["clientSecret"] as? String
+            defaultAccessToken = dict["clientAccessToken"] as? String
         }
+        userDefauls = userDef
     }
     
+    //MARK: Public Methods
     func login() {
         guard let id = clientId else {
             fatalError("ClientId not presented in Keys.plist")
@@ -38,6 +42,10 @@ class DribbbleLogin {
                 UIApplication.shared.open(url, options: [:])
             }
         }
+    }
+    
+    public func logout() {
+        userDefauls.removeObject(forKey: "access_token")
     }
     
     func processOAuthResponse(_ url: URL) {
@@ -63,12 +71,29 @@ class DribbbleLogin {
                 response  in switch response.result {
                 case .success(let json):
                     let res = json as! NSDictionary
-                    print(res.object(forKey: "access_token") ?? "")
+                    guard let accessToken = res.object(forKey: "access_token") else {
+                        return
+                    }
+                    self.userDefauls.set(accessToken, forKey: "access_token")
                 default:
                     print("default")
                 }
                 
             }
         }
+    }
+    
+    func getAccessToken() -> String? {
+        if userDefauls.string(forKey: "access_token") != nil  {
+            return userDefauls.string(forKey: "access_token")
+        }
+        guard defaultAccessToken != nil else {
+            return nil
+        }
+        return defaultAccessToken
+    }
+    
+    func isLoggedIn() -> Bool {
+        return userDefauls.string(forKey: "access_token") != nil
     }
 }

@@ -19,11 +19,14 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     fileprivate let reuseIdentifier = "ImageCell"
     var shots = [Shot]()
     var dataManager = DataManager()
-    var dribbbleLogin = DribbbleLogin()
+    var dribbbleCredentials = DribbbleCredentials(UserDefaults.standard)
     var currentPage = 1
     var loading = true
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        setLoggedIn(isLoggedIn: dribbbleCredentials.isLoggedIn())
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(self.notificationReceived(_:)), name: .LOGIN_SUCCESSFUL_KEY, object: nil)
@@ -131,15 +134,28 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     func notificationReceived(_ notification: Notification) {
-        loginButton.image = UIImage(named: "logout")
+        setLoggedIn(isLoggedIn: true)
         guard let url = notification.userInfo?["url"] as? URL else {
             return
         }
-        dribbbleLogin.processOAuthResponse(url)
+        dribbbleCredentials.processOAuthResponse(url)
         print(url)
     }
     
+    func setLoggedIn(isLoggedIn loggedIn: Bool) {
+        if loggedIn {
+            loginButton.image = UIImage(named: "logout")
+        } else {
+            loginButton.image = UIImage(named: "login")
+        }
+    }
+
     @IBAction func login(_ sender: UIBarButtonItem) {
-        dribbbleLogin.login()
+        if dribbbleCredentials.isLoggedIn() {
+            dribbbleCredentials.logout()
+            setLoggedIn(isLoggedIn: false)
+        } else {
+            dribbbleCredentials.login()
+        }
     }
 }
